@@ -171,6 +171,10 @@
     text-align: center;
   }
 
+  .home{
+    padding-top: 10px;
+  }
+
   .heroTitle {
     font-size: 38px;
   }
