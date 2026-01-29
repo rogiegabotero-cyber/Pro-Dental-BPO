@@ -77,10 +77,6 @@
   transition: 0.25s ease;
 }
 
-.navLink:hover {
-  color: var(text);
-}
-
 .navLink::after {
   content: "";
   position: absolute;
