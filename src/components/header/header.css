@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666;
+  --border: rgba(0, 0, 0, 0.18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 16px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.icon, .word{
+    height: 3rem;
+    object-fit: contain;
+}
+
+.icon img{
+    object-fit: contain;
+}
+
+.logoMark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  padding: 0px 2px;
+  transition: 0.25s ease;
+}
+
+.navLink:hover {
+  color: var(text);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  border-radius: 50px;
+  background: var(--text);
+  transition: 0.25s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btnOutline {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  color: var(--maroon);
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btnOutline:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.btnPrimary {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background:rgb(10, 125, 138);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: 0.25s ease;
+  
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 14px 18px;
+  }
+
+  .navList {
+    gap: 16px;
+  }
+
+  .btnOutline {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+  .btnPrimary{
+    display: none;
+  }
+
+  .word{
+    width: 70%;
+  }
+  
+  .logo{
+    justify-content: left;
+  }
+}
+
+
+/* Active nav link */
+.navLink.active {
+  color: var(--text);
+}
+
+/* Make the underline stay visible when active */
+.navLink.active::after {
+  width: 100%;
+}
+

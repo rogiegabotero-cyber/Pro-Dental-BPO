@@ -1,0 +1,32 @@
+.splash-screen {
+    height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: splashFade 1.2s ease-in-out infinite alternate;
+}
+
+.splash-logo1 {
+  width: 8rem;
+}
+
+.splash-logo2 {
+  width: 13rem;
+}
+
+@keyframes splashFade {
+  from {
+    transform: scale(0.95);
+    opacity: 0.6;
+    margin: 0;
+    overflow: hidden;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    margin: 0;
+    overflow: hidden;
+  }
+}

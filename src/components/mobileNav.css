@@ -1,0 +1,69 @@
+.mobileNav {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2000;
+
+  display: none; /* only show on mobile */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+
+  padding: 10px 10px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.mnavItem {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+  padding: 10px 8px;
+  border-radius: 14px;
+
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.mnavIcon {
+  display: grid;
+  place-items: center;
+}
+
+.mnavLabel {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.mnavItem:active {
+  transform: scale(0.98);
+}
+
+.mnavItem.active {
+  color: rgb(10, 125, 138);
+  background: rgba(10, 125, 138, 0.10);
+  outline: 2px solid rgba(10, 125, 138, 0.25);
+  outline-offset: 2px;
+}
+
+/* Show only on mobile */
+@media (max-width: 700px) {
+  .mobileNav {
+    display: grid;
+  }
+
+  /* Give space so content isn't hidden behind bottom nav */
+  body {
+    padding-bottom: 88px;
+  }
+}
