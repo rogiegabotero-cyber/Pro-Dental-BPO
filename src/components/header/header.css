@@ -67,6 +67,7 @@
 }
 
 .navLink {
+  display: inline-block; /* <-- add this */
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
