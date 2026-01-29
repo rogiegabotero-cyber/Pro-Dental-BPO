@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import "./home.css";
 import Pic1 from "../../../assets/pic1.webp";
+import Pic3 from "../../../assets/pic3.webp";
+import Pic4 from "../../../assets/pic4.webp";
 
 const Home = () => {
   const sectionRef = useRef(null);
   const [show, setShow] = useState(false);
   const [pageBlurred, setPageBlurred] = useState(false);
 
-  // Scroll reveal animation
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
@@ -21,20 +22,13 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Page focus / blur animation (fade in/out)
   useEffect(() => {
     const handleVisibilityChange = () => {
-      if (document.hidden) {
-        setPageBlurred(true); // fade out
-      } else {
-        setPageBlurred(false); // fade in
-      }
+      setPageBlurred(document.hidden);
     };
 
     document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () =>
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, []);
 
   return (
@@ -79,19 +73,28 @@ const Home = () => {
           </div>
 
           <div className="heroButtons anim anim--5">
-            <a href="#services" className="btnPrimary">
-              Explore Services
-            </a>
-            <a href="#contact" className="btnSecondary">
-              Talk to Us
-            </a>
+            <a href="#services" className="btnPrimary">Explore Services</a>
+            <a href="#contact" className="btnSecondary">Talk to Us</a>
           </div>
         </div>
 
         {/* Right Image */}
         <div className="homeImage anim anim--6">
-          <div className="imageCard">
-            <img src={Pic1} alt="Dental Team" />
+          <div className="imageStack">
+            {/* Top-left behind */}
+            <div className="miniCard miniCard--tl" aria-hidden="true">
+              <img src={Pic4} alt="" />
+            </div>
+
+            {/* Bottom-right behind */}
+            <div className="miniCard miniCard--br" aria-hidden="true">
+              <img src={Pic3} alt="" />
+            </div>
+
+            {/* Main image */}
+            <div className="imageCard">
+              <img src={Pic1} alt="Dental Team" />
+            </div>
           </div>
         </div>
       </div>
