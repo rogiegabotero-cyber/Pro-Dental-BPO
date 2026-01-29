@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: splashFade 1.2s ease-in-out infinite alternate;
+  animation: splashFade .8s ease-in-out infinite alternate;
 }
 
 .splash-logo1 {

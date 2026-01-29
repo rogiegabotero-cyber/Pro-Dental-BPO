@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 2500) // splash duration (2.5 seconds)
+    }, 800) // splash duration (2.5 seconds)
 
     return () => clearTimeout(timer)
   }, [])
